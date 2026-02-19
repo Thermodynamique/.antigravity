@@ -78,8 +78,8 @@
 <body>
     <header class="header scrolled">
         <nav class="container nav">
-            <a href="/" class="logo">AQUATERRA<span>.</span></a>
-            <a href="/" class="btn btn-secondary ripple">Retour à la boutique</a>
+            <a href="index.html" class="logo">AQUATERRA<span> AGRI</span></a>
+            <a href="catalog.html" class="btn btn-secondary ripple">Retour au Catalogue</a>
         </nav>
     </header>
 
@@ -121,9 +121,10 @@
                         <div class="pay-option">PayPal</div>
                     </div>
 
-                    <button type="submit" class="btn btn-primary ripple w-full btn-lg">Payer ma commande</button>
-                    <div id="payment-success" class="success-message">Paiement accepté ! Vous allez recevoir un email de
-                        confirmation.</div>
+                    <button type="submit" class="btn btn-primary ripple w-full btn-lg">Confirmer ma Commande</button>
+                    <div id="payment-success" class="success-message"
+                        style="display:none; color: var(--success); margin-top: 15px; font-weight: 600;">Commande
+                        validée ! Un conseiller vous contactera pour la logistique.</div>
                 </form>
             </div>
 
@@ -131,16 +132,16 @@
                 <h3>Votre Panier</h3>
                 <div class="summary-items" style="margin-top: 20px;">
                     <div class="summary-item">
-                        <span>Aquaterra Emerald x1</span>
-                        <span>45.00 €</span>
+                        <span>Blé Dur TeraVerde™ x1</span>
+                        <span>125.00 €</span>
                     </div>
                     <div class="summary-item">
-                        <span>Livraison Premium</span>
-                        <span>0.00 €</span>
+                        <span>Frais de Logistique</span>
+                        <span>Offerts</span>
                     </div>
                     <div class="summary-total">
                         <span>Total (TTC)</span>
-                        <span>45.00 €</span>
+                        <span>125.00 €</span>
                     </div>
                 </div>
                 <p style="font-size: 0.8rem; color: var(--gray); margin-top: 20px;">Livraison prévue sous 3-5 jours
@@ -163,10 +164,10 @@
             btn.innerText = 'Traitement...';
             btn.disabled = true;
             setTimeout(() => {
-                btn.innerText = 'Payé !';
+                btn.innerText = 'Confirmé !';
                 success.style.display = 'block';
                 setTimeout(() => {
-                    window.location.href = '/';
+                    window.location.href = 'index.html';
                 }, 2000);
             }, 2000);
         });
