@@ -72,6 +72,21 @@
             border-color: var(--primary);
             background: rgba(42, 77, 68, 0.05);
         }
+
+        @media (max-width: 768px) {
+            .checkout-page {
+                padding-top: 100px;
+            }
+
+            .checkout-grid {
+                grid-template-columns: 1fr !important;
+            }
+
+            .checkout-form-container,
+            .order-summary {
+                padding: 25px;
+            }
+        }
     </style>
 </head>
 
