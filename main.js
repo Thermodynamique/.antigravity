@@ -13,7 +13,73 @@ document.addEventListener('DOMContentLoaded', () => {
     initProductModal();
     initContactForm();
     initScrollReveal();
+
+    // FAILSAFE: Force visibility after 2 seconds if animations hang
+    setTimeout(() => {
+        document.querySelectorAll('.reveal').forEach(el => el.classList.add('visible'));
+    }, 2000);
 });
+
+/* ===== MOBILE MENU ===== */
+function initMobileMenu() {
+    const btn = document.getElementById('mobile-menu-btn');
+    const drawer = document.getElementById('mobile-drawer');
+    if (!btn || !drawer) return;
+
+    btn.addEventListener('click', () => {
+        btn.classList.toggle('open');
+        drawer.classList.toggle('open');
+    });
+
+    drawer.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+            btn.classList.remove('open');
+            drawer.classList.remove('open');
+        });
+    });
+}
+
+/* ===== RIPPLE EFFECT ===== */
+function initRipple() {
+    const ripples = document.querySelectorAll('.ripple');
+    ripples.forEach(button => {
+        button.addEventListener('click', function (e) {
+            const x = e.clientX - e.target.offsetLeft;
+            const y = e.clientY - e.target.offsetTop;
+            const ripples = document.createElement('span');
+            ripples.style.left = x + 'px';
+            ripples.style.top = y + 'px';
+            ripples.classList.add('ripple-effect');
+            this.appendChild(ripples);
+            setTimeout(() => ripples.remove(), 600);
+        });
+    });
+}
+
+/* ===== CATALOG FILTER ===== */
+function initCatalogFilter() {
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const catalogItems = document.querySelectorAll('.catalog-item');
+    if (!filterBtns.length) return;
+
+    filterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            filterBtns.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+
+            const filter = btn.getAttribute('data-filter');
+            catalogItems.forEach(item => {
+                if (filter === 'all' || item.getAttribute('data-category') === filter) {
+                    item.style.display = 'block';
+                    setTimeout(() => item.style.opacity = '1', 10);
+                } else {
+                    item.style.opacity = '0';
+                    setTimeout(() => item.style.display = 'none', 300);
+                }
+            });
+        });
+    });
+}
 
 /* ===== PRODUCT MODAL ===== */
 function initProductModal() {
