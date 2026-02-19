@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catalogue Agricole | Aquaterra Agri</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&family=Outfit:wght@300;400;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .catalog-page {
+            padding-top: 150px;
+        }
+
+        .filter-bar {
+            background: var(--light);
+            padding: 20px;
+            border-radius: 12px;
+            margin-bottom: 40px;
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .filter-group {
+            display: flex;
+            gap: 10px;
+        }
+
+        .filter-btn {
+            padding: 8px 16px;
+            border-radius: 20px;
+            border: 1px solid #ddd;
+            background: white;
+            cursor: pointer;
+            transition: 0.3s;
+            font-size: 0.9rem;
+        }
+
+        .filter-btn.active {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+
+        .product-grid-catalog {
+            grid-template-columns: repeat(4, 1fr);
+        }
+
+        @media (max-width: 1200px) {
+            .product-grid-catalog {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .product-grid-catalog {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header scrolled">
+        <nav class="container nav">
+            <a href="/" class="logo">AQUATERRA<span>AGRI</span></a>
+            <ul class="nav-links">
+                <li><a href="/" class="nav-link">Accueil</a></li>
+                <li><a href="/catalog" class="nav-link active">Catalogue</a></li>
+                <li><a href="/#expertise" class="nav-link">Expertise</a></li>
+                <li><a href="/#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button class="btn btn-icon ripple" id="cart-btn">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z" />
+                        <path d="M16 10a4 4 0 0 1-8 0" />
+                    </svg>
+                    <span class="cart-count">0</span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container catalog-page">
+        <div class="section-header reveal">
+            <h1 class="section-title">Catalogue <span class="gradient-text">Professionnel</span></h1>
+            <p>Découvrez notre gamme complète d'intrants et de matériels pour l'agriculture durable.</p>
+        </div>
+
+        <div class="filter-bar reveal">
+            <span>Catégories :</span>
+            <div class="filter-group">
+                <button class="filter-btn active">Tous</button>
+                <button class="filter-btn">Semences</button>
+                <button class="filter-btn">Fertilisants</button>
+                <button class="filter-btn">Technologie</button>
+                <button class="filter-btn">Équipement</button>
+            </div>
+        </div>
+
+        <div class="grid product-grid-catalog" id="catalog-products">
+            <!-- Dynamic Products will be here, for now dummy pro items -->
+            <div class="product-card tilt reveal">
+                <div class="product-img">
+                    <img src="https://images.unsplash.com/photo-1595855759920-86582396756a?auto=format&fit=crop&q=80&w=811"
+                        alt="Blé TeraVerde">
+                    <div class="product-overlay">
+                        <button class="btn btn-white ripple add-to-cart">Commander</button>
+                    </div>
+                </div>
+                <div class="product-info">
+                    <span class="product-tag">Semences</span>
+                    <h3>Blé Dur Bio TeraVerde</h3>
+                    <p class="product-short-desc">Variété résistante au stress hydrique.</p>
+                    <p class="price">250 € / tonne</p>
+                </div>
+            </div>
+
+            <div class="product-card tilt reveal">
+                <div class="product-img">
+                    <img src="https://images.unsplash.com/photo-1628352081506-83c43123ed6d?auto=format&fit=crop&q=80&w=800"
+                        alt="Engrais">
+                    <div class="product-overlay">
+                        <button class="btn btn-white ripple add-to-cart">Commander</button>
+                    </div>
+                </div>
+                <div class="product-info">
+                    <span class="product-tag">Fertilisation</span>
+                    <h3>Bio-Nutrient Max</h3>
+                    <p class="product-short-desc">Concentré organique pour maraichage.</p>
+                    <p class="price">45 € / bidon 20L</p>
+                </div>
+            </div>
+
+            <div class="product-card tilt reveal">
+                <div class="product-img">
+                    <img src="https://images.unsplash.com/photo-1563514227147-6d2ff665a6a0?auto=format&fit=crop&q=80&w=800"
+                        alt="Capteur">
+                    <div class="product-overlay">
+                        <button class="btn btn-white ripple add-to-cart">Commander</button>
+                    </div>
+                </div>
+                <div class="product-info">
+                    <span class="product-tag">Technologie</span>
+                    <h3>Station Météo IoT</h3>
+                    <p class="product-short-desc">Analyse en temps réel de 12 paramètres.</p>
+                    <p class="price">299 €</p>
+                </div>
+            </div>
+
+            <div class="product-card tilt reveal">
+                <div class="product-img">
+                    <img src="https://images.unsplash.com/photo-1523348830342-d01fb9151052?auto=format&fit=crop&q=80&w=800"
+                        alt="Sacs de graines">
+                    <div class="product-overlay">
+                        <button class="btn btn-white ripple add-to-cart">Commander</button>
+                    </div>
+                </div>
+                <div class="product-info">
+                    <span class="product-tag">Semences</span>
+                    <h3>Mix Couvert Végétal</h3>
+                    <p class="product-short-desc">Optimisé pour la régénération des sols.</p>
+                    <p class="price">120 € / sac 25kg</p>
+                </div>
+            </div>
+
+            <!-- More results for pro catalog feel -->
+            <div class="product-card tilt reveal">
+                <div class="product-img">
+                    <img src="https://images.unsplash.com/photo-1622383563227-04401ab4e5ea?auto=format&fit=crop&q=80&w=800"
+                        alt="Système irrigation">
+                    <div class="product-overlay">
+                        <button class="btn btn-white ripple add-to-cart">Commander</button>
+                    </div>
+                </div>
+                <div class="product-info">
+                    <span class="product-tag">Équipement</span>
+                    <h3>Vanne Programmable</h3>
+                    <p class="product-short-desc">Contrôle à distance via application.</p>
+                    <p class="price">85 €</p>
+                </div>
+            </div>
+
+            <div class="product-card tilt reveal">
+                <div class="product-img">
+                    <img src="https://images.unsplash.com/photo-1589923188900-85dae523342b?auto=format&fit=crop&q=80&w=800"
+                        alt="Humus">
+                    <div class="product-overlay">
+                        <button class="btn btn-white ripple add-to-cart">Commander</button>
+                    </div>
+                </div>
+                <div class="product-info">
+                    <span class="product-tag">Fertilisation</span>
+                    <h3>Humus Premium Plus</h3>
+                    <p class="product-short-desc">Riche en micro-organismes bénéfiques.</p>
+                    <p class="price">15 € / sac 50L</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container text-center">
+            <p>&copy; 2026 Aquaterra Agri - Catalogue Officiel.</p>
+        </div>
+    </footer>
+
+    <script type="module" src="main.js"></script>
+    <script>
+        // Simple filter logic for demo
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filterBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+            });
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aquaterra Agri | Commerce de Produits Agricoles</title>
+    <meta name="description"
+        content="Aquaterra Agri - Votre partenaire e-commerce pour semences, engrais et technologies agricoles durables.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&family=Outfit:wght@300;400;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌱</text></svg>">
+</head>
+
+<body>
+    <div id="app-root">
+
+        <!-- ===== PAGE LOADER ===== -->
+        <div id="loader" class="loader-overlay">
+            <div class="loader-content">
+                <div class="loader-circle"></div>
+                <span class="loader-text">AQUATERRA AGRI</span>
+            </div>
+        </div>
+
+        <!-- ===== HEADER / NAVIGATION ===== -->
+        <header class="header" id="main-header">
+            <nav class="container nav">
+                <a href="#accueil" class="logo">AQUATERRA<span>AGRI</span></a>
+
+                <!-- Desktop Nav -->
+                <ul class="nav-links">
+                    <li><a href="#accueil" class="nav-link active">Accueil</a></li>
+                    <li><a href="#catalogue" class="nav-link">Catalogue</a></li>
+                    <li><a href="#expertise" class="nav-link">Expertise</a></li>
+                    <li><a href="#a-propos" class="nav-link">À propos</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
+                </ul>
+
+                <div class="nav-actions">
+                    <button class="btn btn-icon ripple" id="cart-btn" aria-label="Panier">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z" />
+                            <path d="M3 6h18" />
+                            <path d="M16 10a4 4 0 0 1-8 0" />
+                        </svg>
+                        <span class="cart-count">0</span>
+                    </button>
+                    <a href="#catalogue" class="btn btn-primary ripple hide-mobile">Voir le Catalogue</a>
+                </div>
+
+                <!-- Mobile Hamburger -->
+                <button id="mobile-menu-btn" class="mobile-menu-btn" aria-label="Menu">
+                    <span></span><span></span><span></span>
+                </button>
+            </nav>
+
+            <!-- Mobile Menu Drawer -->
+            <div id="mobile-drawer" class="mobile-drawer">
+                <a href="#accueil" class="drawer-link">Accueil</a>
+                <a href="#catalogue" class="drawer-link">Catalogue Produits</a>
+                <a href="#expertise" class="drawer-link">Expertise</a>
+                <a href="#a-propos" class="drawer-link">À propos</a>
+                <a href="#contact" class="drawer-link">Contact / Devis</a>
+            </div>
+        </header>
+
+        <main>
+            <!-- ===== HERO SECTION (PRO) ===== -->
+            <section id="accueil" class="hero">
+                <div class="hero-bg"
+                    style="background-image: linear-gradient(rgba(18,34,30,0.6), rgba(18,34,30,0.4)), url('https://images.unsplash.com/photo-1625246333195-78d9c38ad449?auto=format&fit=crop&q=80&w=2600');">
+                </div>
+                <div class="container hero-container relative">
+                    <div class="hero-content fade-in-up">
+                        <span class="hero-tag">Solutions Agricoles Premium</span>
+                        <h1 class="hero-title">Optimisez vos rendements, <br>Préservez vos <span
+                                class="gradient-text">Terres</span>.</h1>
+                        <p class="hero-subtitle">Le premier écosystème e-commerce dédié à l'agriculture de précision.
+                            Semences certifiées, bio-contrôle et agro-équipements livrés en 24h sur votre exploitation.
+                        </p>
+
+                        <div class="hero-btns">
+                            <a href="#catalogue" class="btn btn-primary btn-lg ripple">
+                                <span>Parcourir le Catalogue</span>
+                                <ion-icon name="arrow-forward-outline"></ion-icon>
+                            </a>
+                            <a href="#contact" class="btn btn-outline-white btn-lg ripple">Devenir Partenaire</a>
+                        </div>
+
+                        <div class="hero-stats">
+                            <div class="stat-item">
+                                <span class="stat-num">50k+</span>
+                                <span class="stat-label">Clients Pro</span>
+                            </div>
+                            <div class="stat-divider"></div>
+                            <div class="stat-item">
+                                <span class="stat-num">1200</span>
+                                <span class="stat-label">Références</span>
+                            </div>
+                            <div class="stat-divider"></div>
+                            <div class="stat-item">
+                                <span class="stat-num">24h</span>
+                                <span class="stat-label">Logistique</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ===== MARQUES / PARTNERS (NEW) ===== -->
+            <section class="section-sm bg-light border-bottom">
+                <div class="container">
+                    <p class="text-center text-uppercase text-muted mb-20 text-small">Ils nous font confiance</p>
+                    <div class="logos-grid">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Amazon_logo.svg/2560px-Amazon_logo.svg.png"
+                            alt="Partner" style="opacity:0.4; height:30px; filter:grayscale(100%);">
+                        <!-- Fake logos for demo -->
+                        <h4 style="opacity:0.4;">AGRIVISION</h4>
+                        <h4 style="opacity:0.4;">TERRA.CO</h4>
+                        <h4 style="opacity:0.4;">O-FARM</h4>
+                        <h4 style="opacity:0.4;">ECO-FARM</h4>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ===== EXPERTISE (ENRICHIE) ===== -->
+            <section id="expertise" class="section">
+                <div class="container">
+                    <div class="flex-between items-end section-header-row mb-60">
+                        <div class="section-header mb-0">
+                            <span class="section-subtitle">Notre Savoir-Faire</span>
+                            <h2 class="section-title">Une approche <span class="text-primary">Globale</span></h2>
+                            <p class="section-desc">Nous ne vendons pas seulement des produits. Nous fournissons des
+                                systèmes de culture complets.</p>
+                        </div>
+                        <a href="#contact" class="link-arrow hide-mobile">En savoir plus <ion-icon
+                                name="arrow-forward"></ion-icon></a>
+                    </div>
+
+                    <div class="grid grid-3">
+                        <!-- Card 1 -->
+                        <div class="feature-card reveal">
+                            <div class="icon-box">
+                                <ion-icon name="leaf-outline"></ion-icon>
+                            </div>
+                            <h3>Agro-Écologie</h3>
+                            <p>Des intrants sélectionnés pour leur faible impact environnemental et leur haute
+                                efficacité biologique.</p>
+                            <ul class="check-list">
+                                <li>Semences rustiques</li>
+                                <li>Biostimulants</li>
+                                <li>Couverts végétaux</li>
+                            </ul>
+                        </div>
+                        <!-- Card 2 -->
+                        <div class="feature-card reveal active">
+                            <div class="icon-box">
+                                <ion-icon name="water-outline"></ion-icon>
+                            </div>
+                            <h3>Gestion Hydrique</h3>
+                            <p>Technologies de pointe pour optimiser chaque goutte d'eau. Capteurs sols et pilotage à
+                                distance.</p>
+                            <ul class="check-list">
+                                <li>Sondes capacitives</li>
+                                <li>Irrigation de précision</li>
+                                <li>Stations météo</li>
+                            </ul>
+                        </div>
+                        <!-- Card 3 -->
+                        <div class="feature-card reveal">
+                            <div class="icon-box">
+                                <ion-icon name="analytics-outline"></ion-icon>
+                            </div>
+                            <h3>Data & Performance</h3>
+                            <p>Suivez vos cultures et vos coûts en temps réel grâce à notre plateforme de gestion
+                                parcellaire.</p>
+                            <ul class="check-list">
+                                <li>OAD connectés</li>
+                                <li>Traçabilité</li>
+                                <li>Audits de rendement</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ===== CATALOGUE DE PRODUITS (INTÉGRÉ) ===== -->
+            <section id="catalogue" class="section">
+                <div class="container">
+                    <div class="section-header">
+                        <div>
+                            <h2 class="section-title">Catalogue <span class="gradient-text">Professionnel</span></h2>
+                            <p class="section-desc">Tous nos produits en stock, avec livraison express sous 48h.</p>
+                        </div>
+                    </div>
+
+                    <!-- Filtres -->
+                    <div class="catalog-filters">
+                        <button class="filter-btn active" data-filter="all">Tous les produits</button>
+                        <button class="filter-btn" data-filter="semences">🌾 Semences</button>
+                        <button class="filter-btn" data-filter="engrais">🧪 Engrais & Fertilisants</button>
+                        <button class="filter-btn" data-filter="tech">📡 Technologie</button>
+                        <button class="filter-btn" data-filter="equipement">⚙️ Équipement</button>
+                    </div>
+
+                    <!-- Grille Produits -->
+                    <div class="catalog-grid" id="catalog-grid">
+
+                        <!-- SEMENCES -->
+                        <div class="catalog-item" data-category="semences">
+                            <div class="catalog-item-img">
+                                <img src="https://images.unsplash.com/photo-1595855759920-86582396756a?auto=format&fit=crop&q=80&w=600"
+                                    alt="Blé Dur Bio" loading="lazy">
+                                <span class="badge">Bestseller</span>
+                            </div>
+                            <div class="catalog-item-body">
+                                <span class="cat-tag">Semences</span>
+                                <h3>Blé Dur Bio TeraVerde</h3>
+                                <p>Variété résistante au stress hydrique, rendement élevé. Certifié AB.</p>
+                                <div class="cat-footer">
+                                    <span class="cat-price">250 € <small>/ tonne</small></span>
+                                    <button class="btn btn-primary btn-sm ripple add-to-cart">Ajouter</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="catalog-item" data-category="semences">
+                            <div class="catalog-item-img">
+                                <img src="https://images.unsplash.com/photo-1523348830342-d01fb9151052?auto=format&fit=crop&q=80&w=600"
+                                    alt="Mix Couvert Végétal" loading="lazy">
+                            </div>
+                            <div class="catalog-item-body">
+                                <span class="cat-tag">Semences</span>
+                                <h3>Mix Couvert Végétal</h3>
+                                <p>Mélange optimisé pour la régénération des sols entre deux cultures. Trèfle, moutarde,
+                                    phacélie.</p>
+                                <div class="cat-footer">
+                                    <span class="cat-price">120 € <small>/ sac 25kg</small></span>
+                                    <button class="btn btn-primary btn-sm ripple add-to-cart">Ajouter</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="catalog-item" data-category="semences">
+                            <div class="catalog-item-img">
+                                <img src="https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?auto=format&fit=crop&q=80&w=600"
+                                    alt="Maïs Hybride" loading="lazy">
+                            </div>
+                            <div class="catalog-item-body">
+                                <span class="cat-tag">Semences</span>
+                                <h3>Maïs Hybride F1 AquaMax</h3>
+                                <p>Résistance exceptionnelle à la sécheresse. Idéal climat continental.</p>
+                                <div class="cat-footer">
+                                    <span class="cat-price">320 € <small>/ tonne</small></span>
+                                    <button class="btn btn-primary btn-sm ripple add-to-cart">Ajouter</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- ENGRAIS -->
+                        <div class="catalog-item" data-category="engrais">
+                            <div class="catalog-item-img">
+                                <img src="https://images.unsplash.com/photo-1628352081506-83c43123ed6d?auto=format&fit=crop&q=80&w=600"
+                                    alt="Bio-Nutrient" loading="lazy">
+                                <span class="badge new">Nouveauté</span>
+                            </div>
+                            <div class="catalog-item-body">
+                                <span class="cat-tag">Engrais</span>
+                                <h3>Bio-Nutrient Max 20L</h3>
+                                <p>Concentré organique haute performance pour maraîchage. Compatible ferti-irrigation.
+                                </p>
+                                <div class="cat-footer">
+                                    <span class="cat-price">45 € <small>/ bidon</small></span>
+                                    <button class="btn btn-primary btn-sm ripple add-to-cart">Ajouter</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="catalog-item" data-category="engrais">
+                            <div class="catalog-item-img">
+                                <img src="https://images.unsplash.com/photo-1592982537447-7440770cbfc9?auto=format&fit=crop&q=80&w=600"
+                                    alt="Complexe Nutri-Sol" loading="lazy">
+                            </div>
+                            <div class="catalog-item-body">
+                                <span class="cat-tag">Engrais</span>
+                                <h3>Complexe Nutri-Sol 300</h3>
+                                <p>Formule NPK équilibrée pour grandes cultures. Action progressive et longue durée.</p>
+                                <div class="cat-footer">
+                                    <span class="cat-price">380 € <small>/ palette</small></span>
+                                    <button class="btn btn-primary btn-sm ripple add-to-cart">Ajouter</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="catalog-item" data-category="engrais">
+                            <div class="catalog-item-img">
+                                <img src="https://images.unsplash.com/photo-1589923188900-85dae523342b?auto=format&fit=crop&q=80&w=600"
+                                    alt="Humus Premium" loading="lazy">
+                            </div>
+                            <div class="catalog-item-body">
+                                <span class="cat-tag">Engrais</span>
+                                <h3>Humus Premium Plus</h3>
+                                <p>Amendement organique riche en micro-organismes. Booste la vie microbienne du sol.</p>
+                                <div class="cat-footer">
+                                    <span class="cat-price">15 € <small>/ sac 50L</small></span>
+                                    <button class="btn btn-primary btn-sm ripple add-to-cart">Ajouter</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- TECH -->
+                        <div class="catalog-item" data-category="tech">
+                            <div class="catalog-item-img">
+                                <img src="https://images.unsplash.com/photo-1563514227147-6d2ff665a6a0?auto=format&fit=crop&q=80&w=600"
+                                    alt="Station Météo IoT" loading="lazy">
+                                <span class="badge">Pro</span>
+                            </div>
+                            <div class="catalog-item-body">
+                                <span class="cat-tag">Technologie</span>
+                                <h3>Station Météo IoT AgraSense</h3>
+                                <p>Analyse en temps réel de 12 paramètres météo et sol. Connexion 4G intégrée.</p>
+                                <div class="cat-footer">
+                                    <span class="cat-price">299 €</span>
+                                    <button class="btn btn-primary btn-sm ripple add-to-cart">Ajouter</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="catalog-item" data-category="tech">
+                            <div class="catalog-item-img">
+                                <img src="https://images.unsplash.com/photo-1508444845599-5c89863b1c44?auto=format&fit=crop&q=80&w=600"
+                                    alt="Drone" loading="lazy">
+                            </div>
+                            <div class="catalog-item-body">
+                                <span class="cat-tag">Technologie</span>
+                                <h3>Drone Cartographe X200</h3>
+                                <p>Cartographie NDVI de vos parcelles. Autonomie 45 min. GPS RTK intégré.</p>
+                                <div class="cat-footer">
+                                    <span class="cat-price">4 500 €</span>
+                                    <button class="btn btn-primary btn-sm ripple add-to-cart">Ajouter</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- EQUIPEMENT -->
+                        <div class="catalog-item" data-category="equipement">
+                            <div class="catalog-item-img">
+                                <img src="https://images.unsplash.com/photo-1622383563227-04401ab4e5ea?auto=format&fit=crop&q=80&w=600"
+                                    alt="Vanne Programmable" loading="lazy">
+                            </div>
+                            <div class="catalog-item-body">
+                                <span class="cat-tag">Équipement</span>
+                                <h3>Vanne Programmable WiFi</h3>
+                                <p>Contrôle à distance via application mobile. Compatible tous systèmes d'arrosage.</p>
+                                <div class="cat-footer">
+                                    <span class="cat-price">85 €</span>
+                                    <button class="btn btn-primary btn-sm ripple add-to-cart">Ajouter</button>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+            <!-- ===== A PROPOS ===== -->
+            <section id="a-propos" class="section bg-light">
+                <div class="container grid grid-2 items-center">
+                    <div class="reveal">
+                        <h2 class="section-title">La Vision <span class="gradient-text">Aquaterra</span></h2>
+                        <p class="mb-20">Aquaterra Agri est née d'un constat simple : les agriculteurs méritent un accès
+                            direct, rapide et transparent aux meilleurs intrants du marché, sans intermédiaires
+                            inutiles.</p>
+                        <p class="mb-20">Depuis 2022, nous sélectionnons et commercialisons des produits qui allient la
+                            performance agronomique et le respect des écosystèmes. Notre plateforme e-commerce vous
+                            permet de commander 24h/24, avec livraison sous 48h sur toute la France.</p>
+                        <ul class="agri-checklist">
+                            <li>✅ Plus de 300 références en stock permanent</li>
+                            <li>✅ Livraison express 48h sur exploitation</li>
+                            <li>✅ Support agronome dédié par téléphone</li>
+                            <li>✅ Certifications AB, HVE3, GlobalG.A.P.</li>
+                        </ul>
+                    </div>
+                    <div class="about-image reveal">
+                        <img src="https://images.unsplash.com/photo-1516211697149-d372e35a14d5?auto=format&fit=crop&q=80&w=800"
+                            alt="Vision Aquaterra" loading="lazy">
+                    </div>
+                </div>
+            </section>
+
+            <!-- ===== TEMOIGNAGES ===== -->
+            <section class="section bg-dark text-white">
+                <div class="container">
+                    <div class="section-header text-center">
+                        <h2 class="section-title text-white">Ils nous font Confiance</h2>
+                        <p class="section-desc text-white" style="opacity:0.7;">Des exploitants partout en France
+                            utilisent Aquaterra Agri au quotidien.</p>
+                    </div>
+                    <div class="grid grid-3 testi-grid">
+                        <div class="testimonial-card reveal">
+                            <div class="stars">★★★★★</div>
+                            <p class="quote">"Depuis que nous commandons nos semences sur Aquaterra, notre rendement
+                                maïs a augmenté de 15% malgré la sécheresse estivale."</p>
+                            <span class="author">— Jean Dupont, Céréalier (Beauce)</span>
+                        </div>
+                        <div class="testimonial-card reveal">
+                            <div class="stars">★★★★★</div>
+                            <p class="quote">"Le système de commande en ligne est simple, rapide. La livraison sur
+                                exploitation en 48h, c'est un vrai gain de temps pour nous."</p>
+                            <span class="author">— Coopérative Val de Loire</span>
+                        </div>
+                        <div class="testimonial-card reveal">
+                            <div class="stars">★★★★★</div>
+                            <p class="quote">"L'accompagnement technique est au top. L'agronome m'a aidé à optimiser mon
+                                plan de fertilisation et j'ai réduit mes coûts de 20%."</p>
+                            <span class="author">— Sophie Martin, Maraîchère Bio</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ===== CONTACT & DEVIS ===== -->
+            <section id="contact" class="section">
+                <div class="container grid grid-2 items-center">
+                    <div class="reveal">
+                        <h2 class="section-title">Besoin d'un <span class="gradient-text">Devis</span> ?</h2>
+                        <p class="mb-20">Nos agronomes sont disponibles pour étudier vos besoins et vous proposer un
+                            plan d'approvisionnement sur mesure, adapté à vos cultures et votre calendrier.</p>
+                        <div class="contact-details">
+                            <div class="contact-item">
+                                <strong>📍 Siège :</strong>
+                                <p>Zone Agri-Tech, 45000 Orléans</p>
+                            </div>
+                            <div class="contact-item">
+                                <strong>📞 Ligne Pro :</strong>
+                                <p>+33 (0)2 38 00 00 00</p>
+                            </div>
+                            <div class="contact-item">
+                                <strong>📧 Email :</strong>
+                                <p>commandes@aquaterra-agri.com</p>
+                            </div>
+                        </div>
+                    </div>
+                    <form class="contact-form reveal" id="contact-form">
+                        <div class="form-group">
+                            <input type="text" id="farm-name" required placeholder=" ">
+                            <label for="farm-name">Nom de l'exploitation</label>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="farm-email" required placeholder=" ">
+                            <label for="farm-email">Email professionnel</label>
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" id="farm-tel" placeholder=" ">
+                            <label for="farm-tel">Téléphone</label>
+                        </div>
+                        <div class="form-group">
+                            <textarea id="farm-msg" required placeholder=" " rows="4"></textarea>
+                            <label for="farm-msg">Décrivez votre besoin (hectares, cultures, quantités...)</label>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-lg ripple w-full">Demander mon Devis
+                            Gratuit</button>
+                        <div id="form-success" class="success-message">✅ Demande envoyée avec succès ! Notre équipe vous
+                            répondra sous 24h ouvrées. Réponse automatique d'absence activée.</div>
+                    </form>
+                </div>
+            </section>
+        </main>
+
+        <!-- ===== FOOTER ===== -->
+        <footer class="footer">
+            <div class="container">
+                <div class="footer-top grid grid-4">
+                    <div class="footer-brand">
+                        <a href="#accueil" class="logo">AQUATERRA<span>AGRI</span></a>
+                        <p>Commerce en ligne de produits agricoles durables. Semences, engrais, technologie.</p>
+                    </div>
+                    <div>
+                        <h4>Catalogue</h4>
+                        <ul>
+                            <li><a href="#catalogue">Semences Certifiées</a></li>
+                            <li><a href="#catalogue">Engrais & Amendements</a></li>
+                            <li><a href="#catalogue">Technologie AgTech</a></li>
+                            <li><a href="#catalogue">Équipement Irrigation</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4>Accompagnement</h4>
+                        <ul>
+                            <li><a href="#expertise">Conseil Agronomique</a></li>
+                            <li><a href="#">Analyse de Sol</a></li>
+                            <li><a href="#">Formations Pro</a></li>
+                            <li><a href="#">R&D TeraVerde</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4>Informations</h4>
+                        <ul>
+                            <li><a href="#">Livraison & Retours</a></li>
+                            <li><a href="#">Certifications</a></li>
+                            <li><a href="#">CGV Professionnels</a></li>
+                            <li><a href="#">Mentions Légales</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="footer-bottom text-center">
+                    <p>&copy; 2026 Aquaterra Agriculture SAS. Tous droits réservés. SIRET 123 456 789 00001</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- ===== MOBILE BOTTOM NAV ===== -->
+    <nav class="mobile-bottom-nav">
+        <a href="#accueil" class="mobile-nav-item active">
+            <span class="icon">🏠</span>
+            <span class="label">Accueil</span>
+        </a>
+        <a href="#catalogue" class="mobile-nav-item">
+            <span class="icon">🌾</span>
+            <span class="label">Catalogue</span>
+        </a>
+        <a href="#contact" class="mobile-nav-item">
+            <span class="icon">💬</span>
+            <span class="label">Contact</span>
+        </a>
+        <a href="#" class="mobile-nav-item" id="mobile-cart-trigger">
+            <div class="icon-wrapper">
+                <span class="icon">🛒</span>
+                <span class="cart-count-mobile">0</span>
+            </div>
+            <span class="label">Panier</span>
+        </a>
+    </nav>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="toast"></div>
+
+    <script type="module" src="main.js"></script>
+</body>
+
+</html>
