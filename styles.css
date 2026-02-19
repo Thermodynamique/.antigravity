@@ -606,6 +606,10 @@ img {
     border-bottom: 4px solid var(--accent);
 }
 
+section {
+    overflow: hidden;
+}
+
 .icon-box {
     width: 60px;
     height: 60px;
@@ -649,10 +653,10 @@ img {
 /* --- Brand Logos --- */
 .logos-grid {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    gap: 30px;
+    gap: 40px;
     opacity: 0.7;
 }
 
@@ -1457,11 +1461,14 @@ img {
     .hero {
         min-height: 80vh;
         align-items: center;
-        text-align: left;
+        text-align: center;
     }
 
     .hero-content {
         padding-top: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 
     .hero-title {
@@ -1500,20 +1507,48 @@ img {
         flex-wrap: nowrap;
         -webkit-overflow-scrolling: touch;
         padding-bottom: 15px;
-        margin-right: -20px;
-        padding-right: 20px;
-        /* Bleed effect */
+        margin: 0 -24px 20px;
+        padding: 0 24px;
         scrollbar-width: none;
     }
 
-    .catalog-filters::-webkit-scrollbar {
+    .hero-stats {
+        flex-direction: column;
+        gap: 30px;
+        align-items: flex-start;
+    }
+
+    .stat-divider {
         display: none;
     }
 
-    .filter-btn {
-        flex-shrink: 0;
-        padding: 10px 20px;
-        font-size: 0.9rem;
+    .about-img-sub {
+        right: 0;
+        bottom: -20px;
+        width: 50%;
+    }
+
+    /* Overall alignment fix */
+    .section-header {
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .section-header-row {
+        text-align: center;
+        align-items: center;
+    }
+
+    .hero-stats {
+        flex-direction: column;
+        gap: 30px;
+        align-items: center;
+    }
+
+    .container {
+        overflow: hidden;
+        /* Prevent bleed scroll */
     }
 
     .catalog-item-img {
@@ -1569,15 +1604,9 @@ img {
 }
 
 @media (max-width: 480px) {
-    .hero-title {
-        font-size: 1.8rem;
-    }
-
-    .section-title {
-        font-size: 1.5rem;
-    }
-
-    .catalog-item-body h3 {
-        font-size: 0.95rem;
-    }
+    .hero-title { font-size: 1.8rem; }
+    .section-title { font-size: 1.5rem; }
+    .catalog-item-body h3 { font-size: 0.95rem; }
+    .container { padding: 0 16px; }
+    .hero { text-align: center; }
 }
