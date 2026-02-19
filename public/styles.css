@@ -650,6 +650,219 @@ img {
     }
 }
 
+/* --- About V2 --- */
+.about-split {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+}
+
+.about-content {
+    padding-right: 40px;
+}
+
+.about-tagline {
+    font-family: var(--font-heading);
+    font-size: 2.2rem;
+    line-height: 1.2;
+    margin-bottom: 30px;
+}
+
+.about-values {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.value-box {
+    padding: 24px;
+    background: var(--white);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-sm);
+    border-left: 4px solid var(--accent);
+}
+
+.value-box h4 {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+    color: var(--primary);
+}
+
+.value-box p {
+    font-size: 0.85rem;
+    color: var(--gray);
+    margin: 0;
+}
+
+.about-image-stack {
+    position: relative;
+    padding: 20px;
+}
+
+.about-img-main {
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-lg);
+    transition: 0.5s;
+    width: 100%;
+}
+
+.about-img-sub {
+    position: absolute;
+    bottom: -30px;
+    right: -30px;
+    width: 60%;
+    border: 8px solid var(--white);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+    z-index: 2;
+}
+
+/* --- Modal (Product Details) --- */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(8px);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 10000;
+    padding: 20px;
+}
+
+.modal.active {
+    display: flex;
+    animation: fadeIn 0.3s ease;
+}
+
+.modal-content {
+    background: var(--white);
+    width: 100%;
+    max-width: 900px;
+    max-height: 90vh;
+    border-radius: var(--radius-lg);
+    position: relative;
+    overflow-y: auto;
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+}
+
+.modal-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 2rem;
+    color: var(--dark);
+    cursor: pointer;
+    z-index: 10;
+}
+
+.modal-img {
+    background: #f0f0f0;
+    height: 100%;
+    min-height: 400px;
+}
+
+.modal-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.modal-body {
+    padding: 40px;
+}
+
+.modal-body .cat-tag {
+    margin-bottom: 10px;
+    display: block;
+}
+
+.modal-price {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--primary);
+    margin: 20px 0;
+}
+
+.modal-tabs {
+    display: flex;
+    gap: 20px;
+    border-bottom: 1px solid #eee;
+    margin-top: 30px;
+}
+
+.modal-tab {
+    padding: 10px 0;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: var(--gray);
+    position: relative;
+}
+
+.modal-tab.active {
+    color: var(--primary);
+}
+
+.modal-tab.active::after {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: var(--primary);
+}
+
+.tab-content {
+    padding: 20px 0;
+    font-size: 0.9rem;
+    color: var(--gray);
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+/* --- Stats Bar (Bottom of Section) --- */
+.stats-bar {
+    background: var(--primary);
+    color: white;
+    border-radius: var(--radius-lg);
+    padding: 40px;
+    display: flex;
+    justify-content: space-around;
+    transform: translateY(50%);
+    z-index: 5;
+    position: relative;
+    box-shadow: var(--shadow-lg);
+}
+
+.sb-item {
+    text-align: center;
+}
+
+.sb-num {
+    font-size: 2.5rem;
+    font-weight: 800;
+    display: block;
+    color: var(--accent);
+}
+
+.sb-label {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    opacity: 0.8;
+}
+
 /* --- Section Headers --- */
 .section-header {
     margin-bottom: 40px;

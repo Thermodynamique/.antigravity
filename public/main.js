@@ -10,9 +10,83 @@ document.addEventListener('DOMContentLoaded', () => {
     initRipple();
     initCatalogFilter();
     initCart();
+    initProductModal();
     initContactForm();
     initScrollReveal();
 });
+
+/* ===== PRODUCT MODAL ===== */
+function initProductModal() {
+    const modal = document.getElementById('product-modal');
+    const close = document.querySelector('.modal-close');
+    const catalogItems = document.querySelectorAll('.catalog-item');
+
+    if (!modal) return;
+
+    catalogItems.forEach(item => {
+        const img = item.querySelector('.catalog-item-img');
+        img.addEventListener('click', () => {
+            const title = item.querySelector('h3').innerText;
+            const price = item.querySelector('.cat-price').innerText;
+            const desc = item.querySelector('p').innerText;
+            const cat = item.querySelector('.cat-tag').innerText;
+            const imgSrc = item.querySelector('img').src;
+
+            document.getElementById('modal-title').innerText = title;
+            document.getElementById('modal-price').innerText = price;
+            document.getElementById('modal-desc').innerText = desc;
+            document.getElementById('modal-cat').innerText = cat;
+            document.getElementById('modal-img-tag').src = imgSrc;
+
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden'; // Prevent scroll
+        });
+    });
+
+    close.addEventListener('click', () => {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+    });
+
+    // Close on backdrop click
+    modal.addEventListener('click', (e) => {
+        if (e.target === modal) {
+            modal.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+    });
+
+    // Modal Tabs
+    const tabs = document.querySelectorAll('.modal-tab');
+    const tabContents = document.querySelectorAll('.tab-content');
+
+    tabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+            tabs.forEach(t => t.classList.remove('active'));
+            tabContents.forEach(c => c.classList.remove('active'));
+
+            tab.classList.add('active');
+            const contentId = 'tab-' + tab.getAttribute('data-tab');
+            document.getElementById(contentId).classList.add('active');
+        });
+    });
+
+    // Add to cart from modal
+    const modalAddBtn = document.querySelector('.add-to-cart-modal');
+    modalAddBtn.addEventListener('click', () => {
+        const cartCountDesktop = document.querySelector('.cart-count');
+        const cartCountMobile = document.querySelector('.cart-count-mobile');
+
+        let count = parseInt(cartCountMobile.innerText) + 1;
+
+        if (cartCountDesktop) cartCountDesktop.innerText = count;
+        if (cartCountMobile) cartCountMobile.innerText = count;
+
+        showToast('Produit ajouté au panier !');
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+    });
+}
 
 /* ===== LOADER ===== */
 function initLoader() {
