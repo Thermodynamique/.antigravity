@@ -19,7 +19,8 @@
         href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌱</text></svg>">
 </head>
 
-<body>
+<body class="no-js">
+    <script>document.body.classList.remove('no-js');</script>
     <div id="app-root">
 
         <!-- ===== PAGE LOADER ===== -->
@@ -136,11 +137,12 @@
             <section id="expertise" class="section">
                 <div class="container">
                     <div class="flex-between items-end section-header-row mb-60">
-                        <div class="section-header mb-0">
+                        <div class="section-header mb-0 reveal">
                             <span class="section-subtitle">Notre Savoir-Faire</span>
-                            <h2 class="section-title">Une approche <span class="text-primary">Globale</span></h2>
-                            <p class="section-desc">Nous ne vendons pas seulement des produits. Nous fournissons des
-                                systèmes de culture complets.</p>
+                            <h2 class="section-title">Une approche <span class="text-primary">Scientifique</span> &
+                                Régénérative</h2>
+                            <p class="section-desc">Nous intégrons les dernières avancées en biotechnologie pour
+                                transformer votre exploitation en un écosystème performant et durable.</p>
                         </div>
                         <a href="#contact" class="link-arrow hide-mobile">En savoir plus <ion-icon
                                 name="arrow-forward"></ion-icon></a>
@@ -180,13 +182,13 @@
                             <div class="icon-box">
                                 <ion-icon name="analytics-outline"></ion-icon>
                             </div>
-                            <h3>Data & Performance</h3>
-                            <p>Suivez vos cultures et vos coûts en temps réel grâce à notre plateforme de gestion
-                                parcellaire.</p>
+                            <h3>Intelligence Parcellaire</h3>
+                            <p>Transformez vos données en décisions. Notre IA analyse vos rendements pour optimiser vos
+                                intrants cycle après cycle.</p>
                             <ul class="check-list">
-                                <li>OAD connectés</li>
-                                <li>Traçabilité</li>
-                                <li>Audits de rendement</li>
+                                <li>OAD prédictifs</li>
+                                <li>Traçabilité totale</li>
+                                <li>Optimisation de marge</li>
                             </ul>
                         </div>
                     </div>
@@ -196,10 +198,11 @@
             <!-- ===== CATALOGUE DE PRODUITS (INTÉGRÉ) ===== -->
             <section id="catalogue" class="section">
                 <div class="container">
-                    <div class="section-header">
+                    <div class="section-header reveal">
                         <div>
-                            <h2 class="section-title">Catalogue <span class="gradient-text">Professionnel</span></h2>
-                            <p class="section-desc">Tous nos produits en stock, avec livraison express sous 48h.</p>
+                            <h2 class="section-title">Catalogue <span class="gradient-text">Sélectionné</span></h2>
+                            <p class="section-desc">Une gamme courte, ultra-performante et testée en conditions extrêmes
+                                par nos agronomes partenaires.</p>
                         </div>
                     </div>
 
@@ -224,10 +227,11 @@
                             </div>
                             <div class="catalog-item-body">
                                 <span class="cat-tag">Semences</span>
-                                <h3>Blé Dur Bio TeraVerde</h3>
-                                <p>Variété résistante au stress hydrique, rendement élevé. Certifié AB.</p>
+                                <h3>Blé Dur Bio TeraVerde™</h3>
+                                <p>Haute teneur en protéines (14.5%+). Excellente tolérance à la fusariose. Rendement
+                                    sécurisé même en conditions sèches.</p>
                                 <div class="cat-footer">
-                                    <span class="cat-price">250 € <small>/ tonne</small></span>
+                                    <span class="cat-price">265 € <small>/ tonne</small></span>
                                     <button class="btn btn-primary btn-sm ripple add-to-cart">Ajouter</button>
                                 </div>
                             </div>
@@ -274,12 +278,12 @@
                                 <span class="badge new">Nouveauté</span>
                             </div>
                             <div class="catalog-item-body">
-                                <span class="cat-tag">Engrais</span>
-                                <h3>Bio-Nutrient Max 20L</h3>
-                                <p>Concentré organique haute performance pour maraîchage. Compatible ferti-irrigation.
-                                </p>
+                                <span class="cat-tag">Biostimulants</span>
+                                <h3>Bio-Nutrient Max L-Amino</h3>
+                                <p>Complexe d'acides aminés libres et oligo-éléments. Booste la photosynthèse et la
+                                    résistance post-transplantation.</p>
                                 <div class="cat-footer">
-                                    <span class="cat-price">45 € <small>/ bidon</small></span>
+                                    <span class="cat-price">58 € <small>/ bidon 20L</small></span>
                                     <button class="btn btn-primary btn-sm ripple add-to-cart">Ajouter</button>
                                 </div>
                             </div>
@@ -325,11 +329,12 @@
                                 <span class="badge">Pro</span>
                             </div>
                             <div class="catalog-item-body">
-                                <span class="cat-tag">Technologie</span>
-                                <h3>Station Météo IoT AgraSense</h3>
-                                <p>Analyse en temps réel de 12 paramètres météo et sol. Connexion 4G intégrée.</p>
+                                <span class="cat-tag">Agronomie Digitale</span>
+                                <h3>Station Météo AgraSense Connect</h3>
+                                <p>Capteurs ultrasoniques sans maintenance. Transmission LoRaWAN/4G. Alertes gel et
+                                    prévisions maladies via OAD.</p>
                                 <div class="cat-footer">
-                                    <span class="cat-price">299 €</span>
+                                    <span class="cat-price">349 €</span>
                                     <button class="btn btn-primary btn-sm ripple add-to-cart">Ajouter</button>
                                 </div>
                             </div>
@@ -396,9 +401,9 @@
                                         France.</p>
                                 </div>
                                 <div class="value-box">
-                                    <h4>Zéro Intermédiaire</h4>
-                                    <p>Nous travaillons en direct avec les producteurs de semences et fabricants de
-                                        tech.</p>
+                                    <h4>Circuit Court Industriel</h4>
+                                    <p>Nous supprimons les intermédiaires pour garantir des tarifs usine directs et une
+                                        traçabilité totale.</p>
                                 </div>
                                 <div class="value-box">
                                     <h4>Support Expert</h4>
@@ -509,6 +514,25 @@
                         <div id="form-success" class="success-message">✅ Demande envoyée avec succès ! Notre équipe vous
                             répondra sous 24h ouvrées. Réponse automatique d'absence activée.</div>
                     </form>
+                </div>
+            </section>
+
+            <!-- ===== NEWSLETTER (NEW) ===== -->
+            <section class="section newsletter-section">
+                <div class="container">
+                    <div class="newsletter-card reveal">
+                        <div class="newsletter-grid">
+                            <div class="newsletter-info">
+                                <h3>Restez informé des <span class="text-accent">Innovations Agro</span></h3>
+                                <p>Recevez mensuellement nos analyses de marché et conseils de culture directement dans
+                                    votre boîte mail.</p>
+                            </div>
+                            <form class="newsletter-form">
+                                <input type="email" placeholder="Votre email professionnel" required>
+                                <button type="submit" class="btn btn-primary">S'abonner</button>
+                            </form>
+                        </div>
+                    </div>
                 </div>
             </section>
         </main>

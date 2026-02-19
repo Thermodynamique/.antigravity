@@ -614,7 +614,7 @@ img {
 }
 
 .check-list li::before {
-    content: '✓';
+    content: '→';
     color: var(--accent);
     font-weight: 800;
 }
