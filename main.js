@@ -12,12 +12,6 @@ document.addEventListener('DOMContentLoaded', () => {
     initCart();
     initProductModal();
     initContactForm();
-    initScrollReveal();
-
-    // FAILSAFE: Force visibility after 2 seconds if animations hang
-    setTimeout(() => {
-        document.querySelectorAll('.reveal').forEach(el => el.classList.add('visible'));
-    }, 2000);
 });
 
 /* ===== MOBILE MENU ===== */
@@ -303,17 +297,3 @@ function initContactForm() {
     });
 }
 
-/* ===== SCROLL REVEAL ===== */
-function initScrollReveal() {
-    const elements = document.querySelectorAll('.reveal');
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
-                observer.unobserve(entry.target);
-            }
-        });
-    }, { threshold: 0.05, rootMargin: '0px' });
-
-    elements.forEach(el => observer.observe(el));
-}
