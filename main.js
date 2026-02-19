@@ -152,12 +152,18 @@ function initProductModal() {
 function initLoader() {
     const loader = document.getElementById('loader');
     if (!loader) return;
-    window.addEventListener('load', () => {
+
+    const hideLoader = () => {
         setTimeout(() => {
             loader.style.opacity = '0';
             setTimeout(() => loader.style.display = 'none', 500);
-        }, 600);
-    });
+        }, 300);
+    };
+
+    window.addEventListener('load', hideLoader);
+
+    // Fallback: hide after 3 seconds anyway
+    setTimeout(hideLoader, 3000);
 }
 
 /* ===== HEADER SCROLL & NAV STATES ===== */
