@@ -1417,6 +1417,43 @@ img {
         display: flex;
     }
 
+    .about-split {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .about-content {
+        padding-right: 0;
+    }
+
+    .about-values {
+        grid-template-columns: 1fr;
+    }
+
+    .about-image-stack {
+        order: -1;
+    }
+
+    .stats-bar {
+        flex-direction: column;
+        gap: 20px;
+        transform: none;
+        margin-top: 40px;
+    }
+
+    .modal-content {
+        grid-template-columns: 1fr;
+    }
+
+    .modal-img {
+        height: 250px;
+        min-height: auto;
+    }
+
+    .logo {
+        font-size: 1.4rem;
+    }
+
     .hero {
         min-height: 80vh;
         align-items: center;
