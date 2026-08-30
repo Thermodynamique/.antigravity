@@ -47,10 +47,10 @@ export function VceSubsystemNode({ data, selected }: { data: VceSubsystemNodeDat
   return (
     <div
       className={cn(
-        "relative min-w-[380px] max-w-[440px] rounded-3xl p-5 backdrop-blur-2xl transition-all duration-300 shadow-[0_20px_50px_rgba(0,0,0,0.8)] border font-sans",
+        "relative min-w-[400px] max-w-[460px] rounded-3xl p-6 backdrop-blur-3xl transition-all duration-300 shadow-[0_25px_60px_rgba(0,0,0,0.95)] border font-sans",
         selected
-          ? "bg-purple-950/40 border-purple-400/60 ring-2 ring-purple-500/30"
-          : "bg-[#0d0e15]/80 border-white/15 hover:border-white/25"
+          ? "bg-gradient-to-b from-purple-950/70 via-[#0f0a1c]/80 to-[#090514]/90 border-purple-400/80 ring-2 ring-purple-500/50 shadow-[0_0_40px_rgba(168,85,247,0.3)]"
+          : "bg-gradient-to-b from-[#131524]/90 via-[#0d0e19]/85 to-[#080910]/95 border-white/20 hover:border-purple-400/40"
       )}
     >
       <Handle type="target" position={Position.Top} className="!w-3 !h-3 !bg-purple-500 !border-2 !border-neutral-900" />
