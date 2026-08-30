@@ -42,6 +42,7 @@ import { VceGlobalConflictHub } from "./vce-global-conflict-hub";
 import { SpatialBranchWindow } from "./spatial-branch-window";
 import { VceSurgicalDrawer } from './vce-surgical-drawer';
 import { ExecutiveCapsule } from './executive-capsule';
+import { VceSimulationPanel } from './vce-simulation-panel';
 import mammoth from 'mammoth';
 import * as pdfjsLib from 'pdfjs-dist';
 
@@ -276,6 +277,7 @@ function CanvasInner({ onEnterNode, onExitCanvas }: { onEnterNode?: () => void; 
   const [showExecutiveHarmonyPopover, setShowExecutiveHarmonyPopover] = useState(false);
   const [showExecutiveCoPilot, setShowExecutiveCoPilot] = useState(false);
   const [surgicalDrawerAtom, setSurgicalDrawerAtom] = useState<any | null>(null);
+  const [showSimulationPanel, setShowSimulationPanel] = useState(false);
 
   // Dispatch d'agent vers l'engine backend (avec simulation de curseur orbital sur le nœud cible)
   const handleDispatchAgent = useCallback(async (agentType: 'refactor' | 'research' | 'doc' | 'sentinel', nodeId: string, description: string) => {
@@ -864,6 +866,16 @@ function CanvasInner({ onEnterNode, onExitCanvas }: { onEnterNode?: () => void; 
           <span className="text-xs font-medium tracking-wide text-purple-200 font-sans">+ Sous-Système</span>
         </button>
 
+        {/* BOUTON MOTEUR DE SIMULATION & CAUSALITÉ VCE */}
+        <button
+          onClick={() => setShowSimulationPanel(true)}
+          className="flex items-center gap-2 px-3.5 py-1.5 bg-gradient-to-r from-cyan-950/70 to-blue-950/70 hover:from-cyan-900/80 hover:to-blue-900/80 backdrop-blur-2xl border border-cyan-500/30 hover:border-cyan-400/50 rounded-full shadow-lg transition-all duration-300"
+          title="Ouvrir le moteur de simulation causale & contrefactuelle"
+        >
+          <span className="text-xs">⚡</span>
+          <span className="text-xs font-medium tracking-wide text-cyan-200 font-sans">Simuler Futurs</span>
+        </button>
+
         {/* BOUTON EXECUTIVE CO-PILOT — Ouverture du panneau d'orchestration */}
         <button
           onClick={() => setShowExecutiveCoPilot(true)}
@@ -1049,6 +1061,12 @@ function CanvasInner({ onEnterNode, onExitCanvas }: { onEnterNode?: () => void; 
         onClose={() => setShowExecutiveCoPilot(false)}
         nodes={nodes.map(n => ({ id: n.id, data: { label: String(n.data?.label || ''), category: String(n.data?.category || '') } }))}
         onDispatchAgent={handleDispatchAgent}
+      />
+
+      {/* MOTEUR DE SIMULATION CAUSALE ET CONTREFACTUELLE */}
+      <VceSimulationPanel
+        isOpen={showSimulationPanel}
+        onClose={() => setShowSimulationPanel(false)}
       />
 
     </div>
