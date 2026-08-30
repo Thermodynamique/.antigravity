@@ -1,0 +1,39 @@
+/* BlockNote Apple Premium Flat Overrides */
+.blocknote-dark-theme-override .bn-container {
+  background: transparent !important;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !important;
+}
+
+/* Typography Apple Style */
+.blocknote-dark-theme-override h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: #ffffff;
+}
+
+.blocknote-dark-theme-override h2 {
+  font-size: 1.75rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: #f2f2f7;
+}
+
+.blocknote-dark-theme-override h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #ebebf5;
+}
+
+/* Espacement des paragraphes */
+.blocknote-dark-theme-override p {
+  line-height: 1.6;
+  font-size: 1.05rem;
+  color: #d1d1d6; /* Apple System Gray 2 */
+}
+
+/* Fix for BlockNote default Editor bounds */
+.blocknote-dark-theme-override .bn-editor {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
