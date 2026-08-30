@@ -44,6 +44,9 @@ import { VceSurgicalDrawer } from './vce-surgical-drawer';
 import { ExecutiveCapsule } from './executive-capsule';
 import { VceSimulationPanel } from './vce-simulation-panel';
 import { PersistentWorldModelBar } from './vce-persistent-world-bar';
+import { VceTemporalCognition } from './vce-temporal-cognition';
+import { VceMultiscaleBar } from './vce-multiscale-bar';
+import { VceDigitalTwinModal } from './vce-digital-twin-modal';
 import mammoth from 'mammoth';
 import * as pdfjsLib from 'pdfjs-dist';
 
@@ -279,6 +282,7 @@ function CanvasInner({ onEnterNode, onExitCanvas }: { onEnterNode?: () => void; 
   const [showExecutiveCoPilot, setShowExecutiveCoPilot] = useState(false);
   const [surgicalDrawerAtom, setSurgicalDrawerAtom] = useState<any | null>(null);
   const [showSimulationPanel, setShowSimulationPanel] = useState(false);
+  const [showDigitalTwinModal, setShowDigitalTwinModal] = useState(false);
 
   // Dispatch d'agent vers l'engine backend (avec simulation de curseur orbital sur le nœud cible)
   const handleDispatchAgent = useCallback(async (agentType: 'refactor' | 'research' | 'doc' | 'sentinel', nodeId: string, description: string) => {
@@ -877,6 +881,20 @@ function CanvasInner({ onEnterNode, onExitCanvas }: { onEnterNode?: () => void; 
           <span className="text-xs font-medium tracking-wide text-cyan-200 font-sans">Simuler Futurs</span>
         </button>
 
+        {/* BOUTON COGNITIVE DIGITAL TWIN (ÉVOLUTIONS 14, 15, 16) */}
+        <button
+          onClick={() => setShowDigitalTwinModal(true)}
+          className="flex items-center gap-2 px-3.5 py-1.5 bg-gradient-to-r from-emerald-950/70 to-teal-950/70 hover:from-emerald-900/80 hover:to-teal-900/80 backdrop-blur-2xl border border-emerald-500/30 hover:border-emerald-400/50 rounded-full shadow-lg transition-all duration-300"
+          title="Ouvrir le Jumeau Numérique Cognitif de l'Organisation"
+        >
+          <span className="text-xs">🌐</span>
+          <span className="text-xs font-medium tracking-wide text-emerald-200 font-sans">Digital Twin</span>
+        </button>
+
+        {/* COMPOSANTS ÉVOLUTIONS 3 & 8-9 (TEMPORAL COGNITION & MULTI-SCALE) */}
+        <VceTemporalCognition />
+        <VceMultiscaleBar />
+
         {/* BOUTON EXECUTIVE CO-PILOT — Ouverture du panneau d'orchestration */}
         <button
           onClick={() => setShowExecutiveCoPilot(true)}
@@ -1071,6 +1089,12 @@ function CanvasInner({ onEnterNode, onExitCanvas }: { onEnterNode?: () => void; 
       <VceSimulationPanel
         isOpen={showSimulationPanel}
         onClose={() => setShowSimulationPanel(false)}
+      />
+
+      {/* JUMEAU NUMÉRIQUE COGNITIF DE L'ORGANISATION (ÉVOLUTIONS 14, 15, 16) */}
+      <VceDigitalTwinModal
+        isOpen={showDigitalTwinModal}
+        onClose={() => setShowDigitalTwinModal(false)}
       />
 
     </div>
