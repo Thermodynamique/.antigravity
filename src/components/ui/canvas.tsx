@@ -43,6 +43,7 @@ import { SpatialBranchWindow } from "./spatial-branch-window";
 import { VceSurgicalDrawer } from './vce-surgical-drawer';
 import { ExecutiveCapsule } from './executive-capsule';
 import { VceSimulationPanel } from './vce-simulation-panel';
+import { PersistentWorldModelBar } from './vce-persistent-world-bar';
 import mammoth from 'mammoth';
 import * as pdfjsLib from 'pdfjs-dist';
 
@@ -955,6 +956,9 @@ function CanvasInner({ onEnterNode, onExitCanvas }: { onEnterNode?: () => void; 
             <span>🌌 Gravité Sémantique</span>
           </button>
         </div>
+
+      {/* BARRE DU MODÈLE DE MONDE PERSISTANT (ÉVOLUTIONS 1 & 2) */}
+      <PersistentWorldModelBar />
 
       {/* COMPOSANT SPATIAL INTENT AU CURSEUR (BULLE ÉPHÉMÈRE + CRISTALLISATION EN NOTE) */}
       <SpatialIntentController onDispatchAgent={handleDispatchAgent} />
